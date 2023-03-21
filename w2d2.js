@@ -52,7 +52,7 @@ function onlyPoisonType() {
   for (var i = 0; i < pokémon.length; i++) {
     if (pokémon[i].types.length === 1 && pokémon[i].types == 'poison') {
       var nomékop = '';
-      for (j = pokémon[i].name.length - 1; j >= 0; j--) {
+      for (var j = pokémon[i].name.length - 1; j >= 0; j--) {
         nomékop += pokémon[i].name.charAt(j);
       }
       console.log(nomékop);

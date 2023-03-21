@@ -67,3 +67,7 @@ function secondTypeFlying() {
     }
   }
 }
+
+function unreadablePoisonType() {
+  for (var i = 0; i < pokémon.length; i++) if (pokémon[i].types == 'poison') console.log(pokémon[i].name.split('').reverse().join(''));
+}

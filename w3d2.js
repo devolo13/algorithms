@@ -48,6 +48,7 @@ const val2 = 18;
 const expected2 = [5, 11, 29, 18, 6, 27]
 
 
+
 /**
  * Given an array, remove and return the value at
  * the beginning of the array. Do this in-place
@@ -58,12 +59,17 @@ const expected2 = [5, 11, 29, 18, 6, 27]
  * @returns {Number} - The removed value.
  */
 function popFront(nums) {
-  nums = nums[0];
-  return nums;
+  nums[nums.length]=nums[0];
+  for (let i = 1; i< nums.length; i++){
+    nums[i-1]=nums[i];
+  }
+  nums.pop();
+  return nums.pop();
 }
 
 const arr3 = [25, 16, 5, 21, 7];
 const expected3 = 25;
+
 
 
 /**
@@ -78,10 +84,16 @@ const expected3 = 25;
  * @returns {Number} The removed value.
  */
 function removeAt(nums, idx) {
-  nums = nums[idx];
-  return nums;
+  nums[nums.length]=nums[idx];
+  for (let i = idx+1; i< nums.length; i++){
+    nums[i-1]=nums[i];
+  }
+  nums.pop();
+  return nums.pop();
 }
 
 const arr4 = [5, 21, 2, 30, 8];
 const idx4 = 1;
 const expected4 = 21;
+
+console.log(removeAt(arr4,idx4));

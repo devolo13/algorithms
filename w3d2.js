@@ -58,6 +58,11 @@ const expected2 = [5, 11, 29, 18, 6, 27]
  * @param {Array} nums - The given array.
  * @returns {Number} - The removed value.
  */
+
+// function popFront(nums) {
+//   return nums[0];
+// }
+
 function popFront(nums) {
   nums[nums.length]=nums[0];
   for (let i = 1; i< nums.length; i++){
@@ -83,6 +88,11 @@ const expected3 = 25;
  * @param {Number} idx - The index at which to remove the value.
  * @returns {Number} The removed value.
  */
+
+// function removeAt(nums,idx){
+//   return nums[idx];
+// }
+
 function removeAt(nums, idx) {
   nums[nums.length]=nums[idx];
   for (let i = idx+1; i< nums.length; i++){
@@ -95,5 +105,3 @@ function removeAt(nums, idx) {
 const arr4 = [5, 21, 2, 30, 8];
 const idx4 = 1;
 const expected4 = 21;
-
-console.log(removeAt(arr4,idx4));

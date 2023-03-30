@@ -1,7 +1,7 @@
 function fibonacci(index) {
   if (!(index >= 0)) {
     return 'error';
-  } else if (typeof (index) != 'bigint') {
+  } else if (typeof index != 'bigint') {
     if (index % 1 != 0) {
       return 'error';
     } else {
@@ -16,10 +16,10 @@ function fibonacci(index) {
   return fib[index];
 }
 
-function digitsIn(num){
+function digitsIn(num) {
   num = String(num);
   let i = 0;
-  while (num.charAt(i)!=''){
+  while (num.charAt(i) != '') {
     i++;
   }
   return i;

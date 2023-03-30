@@ -1,5 +1,5 @@
 function fibonacci(index) {
-  if (!(index > 0)) {
+  if (!(index >= 0)) {
     return 'error';
   }
   var fib = [0, 1];

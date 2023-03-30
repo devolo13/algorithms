@@ -1,5 +1,5 @@
 function fibonacci(index) {
-  if (!(index >= 0)) {
+  if (!(index >= 0) || index % 1 != 1) {
     return 'error';
   }
   var fib = [0, 1];
@@ -9,4 +9,4 @@ function fibonacci(index) {
   return fib[index];
 }
 
-console.log(fibonacci('pi'));
+console.log(fibonacci(2.1));

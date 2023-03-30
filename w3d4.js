@@ -1,12 +1,28 @@
 function fibonacci(index) {
-  if (!(index >= 0) || index % 1 != 1) {
+  if (!(index >= 0)) {
     return 'error';
+  } else if (typeof (index) != 'bigint') {
+    if (index % 1 != 0) {
+      return 'error';
+    } else {
+      index = BigInt(index);
+    }
   }
-  var fib = [0, 1];
+  let fib = [0n, 1n];
   while (typeof fib[index] === 'undefined') {
-    fib[fib.length] = fib[fib.length - 2] + fib[fib.length - 1];
+    let length = BigInt(fib.length);
+    fib[length] = fib[length - 2n] + fib[length - 1n];
   }
   return fib[index];
 }
 
-console.log(fibonacci(2.1));
+function digitsIn(num){
+  num = String(num);
+  let i = 0;
+  while (num.charAt(i)!=''){
+    i++;
+  }
+  return i;
+}
+
+console.log(digitsIn(fibonacci(111111)));

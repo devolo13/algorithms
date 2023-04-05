@@ -37,7 +37,7 @@ function join(arr, separator = ', ') {
   let string = '';
   for (let i = 0; i < arr.length; i++) {
     string += arr[i];
-    if (arr[i + 1] != undefined) {
+    if (arr[i + 1] != undefined) { // if (i == arr.length - 1)
       string += separator;
     }
   }

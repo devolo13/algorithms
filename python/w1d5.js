@@ -9,9 +9,6 @@ function isPalindrome(str) {
 
 function zipArraysIntoMap(keys, values) {
   let map = {};
-  if (keys.length == 0 || values.length == 0) {
-    return map;
-  }
   for (let i = 0; i < keys.length; i++) {
     if (values[i] == undefined) {
       return map;

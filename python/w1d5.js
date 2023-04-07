@@ -19,13 +19,8 @@ function zipArraysIntoMap(keys, values) {
   return map;
 }
 
-const keys1 = ['abc', 3, 'yo'];
-const vals1 = [42, 'wassup', true];
-const expected1 = {
-  abc: 42,
-  3: 'wassup',
-  yo: true,
-};
+const keys3 = [ "a", "b", "c", "d" ];
+const vals3 = [ 1, 2, 3 ];
 
 console.log(isPalindrome('Racecar'));
-console.log(zipArraysIntoMap(keys1, vals1));
+console.log(zipArraysIntoMap(keys3, vals3));

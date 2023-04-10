@@ -78,5 +78,7 @@ function frequencyTable2(arr){
   return finalObj;
 }
 
-console.log(makeFrequencyTable(arr2));
+
+console.log(invertObj(obj0));
 console.log(frequencyTable2(arr2));
+console.log(makeFrequencyTable(arr2));

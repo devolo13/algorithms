@@ -13,7 +13,7 @@ function reverseWords(str) {
     for (let i = newString[word].length - 1; i >= 0; i--) {
       tempWord += newString[word][i];
     }
-    if (returnString != ''){
+    if (returnString != '') {
       returnString += ' ';
     }
     returnString += tempWord;
@@ -22,7 +22,6 @@ function reverseWords(str) {
 }
 
 console.log(reverseWords(str2));
-
 
 const str21 = 'This is a test';
 // const expected1 = "test a is This";
@@ -35,9 +34,9 @@ function reverseWordOrder(wordsStr) {
   wordsStr = wordsStr.split(' ');
   wordsStr = wordsStr.reverse();
   returnString = '';
-  for (word in wordsStr){
-    if (wordsStr[word] != ''){
-      if (returnString != ''){
+  for (word in wordsStr) {
+    if (wordsStr[word] != '') {
+      if (returnString != '') {
         returnString += ' ';
       }
       returnString += wordsStr[word];

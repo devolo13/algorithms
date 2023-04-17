@@ -26,7 +26,7 @@ function trim(str) {
   return str.join('')
 }
 
-// console.log(trim(str1));
+console.log(trim(str1));
 
 /* 
   Given an array of objects / dictionaries to represent new inventory,
@@ -89,7 +89,7 @@ function updateInventory(newInv, currInv) {
   return currInv;
 }
 
-// console.log(updateInventory(newInv1, currInv1));
+console.log(updateInventory(newInv1, currInv1));
 
 /* 
   An anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
@@ -132,5 +132,3 @@ function isAnagram(s1, s2) {
 }
 
 console.log(isAnagram(strA3, strB3));
-
-// console.log(strA1.split('').sort());

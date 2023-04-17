@@ -125,10 +125,7 @@ const expected34 = true;
  * @returns {boolean} Whether s1 and s2 are anagrams.
  */
 function isAnagram(s1, s2) {
-  if (s1.toLowerCase().split('').sort().join('') == s2.toLowerCase().split('').sort().join('')){
-    return true
-  }
-  return false
+  return (s1.toLowerCase().split('').sort().join('') == s2.toLowerCase().split('').sort().join(''))
 }
 
 console.log(isAnagram(strA3, strB3));

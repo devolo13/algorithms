@@ -23,14 +23,16 @@ const expected13 = 0;
  * @returns {number}
  */
 function recursiveSigma(num) {
-  if (num < 0){
-    return 0
+  if (num < 0) {
+    return 0;
   }
-  let sum = Math.floor(num) + recursiveSigma(num-1);
-  return sum
+  let sum = Math.floor(num) + recursiveSigma(num - 1);
+  return sum;
 }
 
+
 // console.log(recursiveSigma(2.5));
+
 
 /* 
   Recursively sum an arr of ints
@@ -39,10 +41,8 @@ function recursiveSigma(num) {
 const nums21 = [1, 2, 3];
 const expected21 = 6;
 
-
 const nums22 = [1];
 const expected22 = 1;
-
 
 const nums23 = [];
 const expected23 = 0;
@@ -56,11 +56,11 @@ const expected23 = 0;
  * @returns {number} The sum of the given nums.
  */
 function sumArr(nums) {
-  if (nums.length <= 0){
+  if (nums.length <= 0) {
     return 0;
   }
   sum = nums[0];
-  nums.splice(0,1);
+  nums.splice(0, 1);
   sum += sumArr(nums);
   return sum;
 }

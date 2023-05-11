@@ -77,7 +77,7 @@ function consecutiveSumsV2(arr, k) {
       tempArr.push(arr[index]);
       if (runningSum === k) {
         // if we found a solution, push it to the options array
-        // spread operator
+        // the [...array] is called the spread operator. it allows cloning of arrays without using the same memory location
         options.push([...tempArr]);
       }
       // infinite loops are bad mkay

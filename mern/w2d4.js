@@ -32,6 +32,8 @@ output = [
 // 👉  take ~10 mins to write the pseudocode here:
 
 // create the function and decide what params it needs and what it will return here:
+
+// This function works, but introduces a third loop to count the trailing zeros 
 function consecutiveSums(arr, k) {
   let options = [];
   for (let i = 0; i < arr.length; i++) {
@@ -57,6 +59,8 @@ function consecutiveSums(arr, k) {
   return options;
 }
 
+// this version of the function allows us to look for trailing zeros after we've pushed our answer to the options array
+// this means there is no need for a third loop and we can do everything in just one while loop
 function consecutiveSumsV2(arr, k) {
   // setup our options array so we can push all our answers to it
   let options = [];
@@ -83,6 +87,6 @@ function consecutiveSumsV2(arr, k) {
   return options;
 }
 
-// console.log(consecutiveSums(arr1, k1));
+console.log(consecutiveSums(arr1, k1));
 
 console.log(consecutiveSumsV2(arr1, k1));

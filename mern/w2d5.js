@@ -82,3 +82,23 @@ function twoSumsOneLoop(arr, val) {
 
 console.log(twoSums([2, 11, 7, 15], 26));
 console.log(twoSumsOneLoop([2, 11, 7, 15], 26));
+
+
+
+
+// stolen from https://javascript.plainenglish.io/how-to-solve-two-sum-algorithm-in-javascript-90c998dd8aad
+function twoSumsCopiedFromPlace(nums, target){
+  //FIRST STEP: create an empty Object 
+  let numObject = {};
+  //SECOND STEP: use a for-loop to iterate through the array
+  for(let eachNum in nums){
+    let otherNum = target - nums[eachNum] //we'll check for otherNum in the object and if it's there, we got it and can push in our result array. if(otherNum in numObject){
+      let resultArr = [];
+      resultArr.push(otherNum, nums[eachNum])
+      return resultArr;
+  }
+  numObject[nums[eachNum]] = eachNum //NB! adding key/value has to go after the if-statement to avoid adding the same index twice. We add the value or a new pair on each iteration.
+    return "not found";
+}
+
+// console.log(twoSumsCopiedFromPlace([2, 11, 7, 15], 26));

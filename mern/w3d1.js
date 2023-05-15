@@ -67,7 +67,11 @@ function insert(tableName, columnValuePairs) {
   let values = ' VALUES (';
   for (key in columnValuePairs) {
     columns += key + ', ';
-    values += "'" + columnValuePairs[key] + "'" + ', ';
+    if (typeof(columnValuePairs[key]) == 'string') {
+      values += "'" + columnValuePairs[key] + "'" + ', ';
+    } else {
+      values += columnValuePairs[key] + ', ';
+    }
   }
   const valuesCommand = values.slice(0, -2) + ');';
   const columnsCommand = columns.slice(0, -2) + ')';

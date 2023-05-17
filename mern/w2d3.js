@@ -44,5 +44,23 @@ function diagonalDifference(sqrMatrix) {
   return dif;
 }
 
+// what's a "bad practice"? never heard of it
+function javascriptReallyIsTheWildWest(sqrMatrix) {
+  let diagTlBr = false;
+  let diagTrBl = false;
+  for (let i = false; i < sqrMatrix.length; i += true){
+    diagTlBr += sqrMatrix[i * true][i * true];
+    diagTrBl += sqrMatrix[i * true][sqrMatrix.length - true - i];
+  }
+  let dif = diagTlBr - diagTrBl;
+  if (dif < false) {
+    dif *= (false - true);
+  }
+  return dif;
+}
+
 console.log(diagonalDifference(squareMatrix1));
 console.log(diagonalDifference(squareMatrix2));
+
+console.log(javascriptReallyIsTheWildWest(squareMatrix1));
+console.log(javascriptReallyIsTheWildWest(squareMatrix2));

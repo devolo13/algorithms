@@ -38,16 +38,23 @@ const students = [
 // Ninja.findByIdAndUpdate(req.params._id, {})
 function findByIdAndUpdate(id, updatedVals, collection) {
   for (const object of collection) {
+    // loop through our collection
     if (object['id'] === id) {
+      // check if we found the object we want
       for (const key in updatedVals) {
+        // loop through each key in our updated values array
         if (object.hasOwnProperty(key)){
+          // if the updated value key exists in our our old object
           object[key] = updatedVals[key];
+          // update the old object
         }
       }
       return object;
+      // after we've updated all the values, return the updated object
     }
   }
   return 'error. object not found in collection';
+  // if we loop through the entire collection without finding our object, return an error message
 }
 
 

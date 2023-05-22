@@ -27,29 +27,40 @@ const expected3 = [];
 
 function dropIt(arr, callback) { 
   while (arr.length > 0){
+    // continue looping until our array has no elements
     if (callback(arr[0])){
+      // if our first element satisfies the callback, return the current array
       return arr;
     } else {
+      // if our first element doesn't satisfy the callback, remove that element
       arr = arr.slice(1);
     }
   }
+  // for edge cases, return the empty array
   return arr
 }
 
 function dropIt2(arr, callback) {
   for (let i = 0; i < arr.length; i++){
-    if (callback(arr.slice(i)[0])){
+    // loop through the array
+    if (callback(arr[i])){
+      // find the first element satisfies the callback
       return arr.slice(i);
+      // return the array sliced to that element
     }
   }
+  // edge case, return an empty array
   return [];
 }
 
 function dropIt3(arr, callback) {
   let idx = 0;
+  // initialize an index
   while (idx < arr.length && !callback(arr[idx])) {
+    // loop while the index is within the array and the callback isn't satisfied
     idx++;
   }
+  // return either the array sliced to the correct index, or the array with all elements sliced out
   return arr.slice(idx);
 }
 

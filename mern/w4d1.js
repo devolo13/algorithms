@@ -61,7 +61,10 @@ function dropIt3(arr, callback) {
   return arr.slice(idx);
 }
 
-const dropIt4 = (arr, callback) => {for (let i = 0; i < arr.length; i++) if (callback(arr[i])) return arr.slice(i); return [];}
+const dropIt4 = (arr, callback) => {
+  for (let i = 0; i < arr.length; i++) if (callback(arr[i])) return arr.slice(i);
+  return [];
+};
 
 // app.get("/api", (req, res) => {
 //     res.json

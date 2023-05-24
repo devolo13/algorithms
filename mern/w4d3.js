@@ -54,17 +54,24 @@ const expected4 = false;
 // Explanation: S becomes "c" while T becomes "b".
 
 function backspaceStringCompare(S, T) {
+  // convert S and T to arrays so they're easier to work with
   let sArr = [...S];
   let tArr = [...T];
+  // setup our index variable
   let i = 0;
+  // loop through our array
   while (i < sArr.length) {
     if (sArr[i] === '#') {
+      // if we find a # remove it and the character before it
       sArr.splice(i - 1, 2);
+      // then decrement the index to look at the character that would have been behind the #
       i--;
     } else {
+      // if our character isn't a # then ignore it and continue on
       i++;
     }
   }
+  // repeat the first loop, but with the second array
   let j = 0;
   while (i < tArr.length) {
     if (tArr[j] === '#') {
@@ -74,6 +81,8 @@ function backspaceStringCompare(S, T) {
       j++;
     }
   }
+  // return true if the arrays are the same, false if they are different
+  // need .toString() because of how js compares arrays
   return sArr.toString() === tArr.toString();
 }
 

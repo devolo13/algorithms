@@ -153,7 +153,6 @@ function backspaceStringCompare3(S, T) {
   return S === T;
 }
 
-// rehashString and backspaceStringCompare4 work together
 function rehashString (S) {
   let i = 0;
   while (S[i] != undefined) {
@@ -174,6 +173,8 @@ function rehashString (S) {
 function backspaceStringCompare4(S, T){
   return rehashString(S) === rehashString(T);
 }
+
+const backspaceStringCompare5 = (S,T) => (rehashString(S)===rehashString(T));
 
 //---------------------
 
@@ -202,3 +203,10 @@ console.log(backspaceStringCompare4(S1, T1));
 console.log(backspaceStringCompare4(S2, T2));
 console.log(backspaceStringCompare4(S3, T3));
 console.log(backspaceStringCompare4(S4, T4));
+
+console.log('');
+
+console.log(backspaceStringCompare5(S1, T1));
+console.log(backspaceStringCompare5(S2, T2));
+console.log(backspaceStringCompare5(S3, T3));
+console.log(backspaceStringCompare5(S4, T4));

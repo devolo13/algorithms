@@ -95,7 +95,7 @@ function backspaceStringCompare2(S, T) {
   let j = 0;
   // loop through our arrays
   while (i < sArr.length || j < tArr.length) {
-    if (i < sArr.length){
+    if (i < sArr.length) {
       if (sArr[i] === '#') {
         // if we find a # remove it and the character before it
         sArr.splice(i - 1, 2);
@@ -106,7 +106,7 @@ function backspaceStringCompare2(S, T) {
         i++;
       }
     }
-    if (j < tArr.length){
+    if (j < tArr.length) {
       if (tArr[j] === '#') {
         // if we find a # remove it and the character before it
         tArr.splice(j - 1, 2);
@@ -123,6 +123,58 @@ function backspaceStringCompare2(S, T) {
   return sArr.toString() === tArr.toString();
 }
 
+function backspaceStringCompare3(S, T) {
+  let i = 0;
+  while (S[i] != undefined) {
+    if (S[i] === '#') {
+      if (S[i - 1] == undefined) {
+        S = S.substr(i + 1);
+      } else {
+        S = S.substr(0, i - 1) + S.substr(i + 1);
+        i--;
+      }
+    } else {
+      i++;
+    }
+  }
+  let j = 0;
+  while (T[j] != undefined) {
+    if (T[j] === '#') {
+      if (S[j - 1] == undefined) {
+        T = T.substr(j + 1);
+      } else {
+        T = T.substr(0, j - 1) + T.substr(j + 1);
+        j--;
+      }
+    } else {
+      j++;
+    }
+  }
+  return S === T;
+}
+
+// rehashString and backspaceStringCompare4 work together
+function rehashString (S) {
+  let i = 0;
+  while (S[i] != undefined) {
+    if (S[i] === '#') {
+      if (S[i - 1] == undefined) {
+        S = S.substr(i + 1);
+      } else {
+        S = S.substr(0, i - 1) + S.substr(i + 1);
+        i--;
+      }
+    } else {
+      i++;
+    }
+  }
+  return S;
+}
+
+function backspaceStringCompare4(S, T){
+  return rehashString(S) === rehashString(T);
+}
+
 //---------------------
 
 console.log(backspaceStringCompare(S1, T1));
@@ -136,3 +188,17 @@ console.log(backspaceStringCompare2(S1, T1));
 console.log(backspaceStringCompare2(S2, T2));
 console.log(backspaceStringCompare2(S3, T3));
 console.log(backspaceStringCompare2(S4, T4));
+
+console.log('');
+
+console.log(backspaceStringCompare3(S1, T1));
+console.log(backspaceStringCompare3(S2, T2));
+console.log(backspaceStringCompare3(S3, T3));
+console.log(backspaceStringCompare3(S4, T4));
+
+console.log('');
+
+console.log(backspaceStringCompare4(S1, T1));
+console.log(backspaceStringCompare4(S2, T2));
+console.log(backspaceStringCompare4(S3, T3));
+console.log(backspaceStringCompare4(S4, T4));

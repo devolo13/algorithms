@@ -48,7 +48,7 @@ const expected6 = false;
 */
 
 function canBecomePalindrome(str) {
-  if (str.length == 0) {
+  if (str.length === 0) {
     // edge case check for empty strings
     return false;
   }
@@ -65,7 +65,7 @@ function canBecomePalindrome(str) {
       dict[str[i]] = 1;
     }
   }
-  if (str.length % 2 == 0) {
+  if (str.length % 2 === 0) {
     // if our string has an even length
     for (key in dict) {
       // loop through the keys
@@ -86,7 +86,7 @@ function canBecomePalindrome(str) {
         odds++;
       }
     }
-    if (odds == 1) {
+    if (odds === 1) {
       // if there is exactly one letter with an odd number of occurrences then we return true
       return true;
     } else {

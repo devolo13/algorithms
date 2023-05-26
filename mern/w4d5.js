@@ -37,7 +37,7 @@ function lengthOfLongestSubString(str) {
   // setup a max variable to keep track of the longest non-repeating string
   let max = 0;
   // loop through the array and keep track of the start index (i)
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length && str.length - i > max; i++) {
     // setup a dictionary to keep track of what characters are already in our non-repeating string
     let dict = {};
     // loop through the array starting at i to create our non-repeating string

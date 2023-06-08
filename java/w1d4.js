@@ -60,6 +60,8 @@ class SinglyLinkedList {
     return runner.data;
   }
 
+  // const secondToLastWorse = (runner = this.head) => {while (runner.next.next) runner = runner.next; return runner.data};
+
   /**
    * Removes the node that has the matching given val as it's data.
    * - Time: O(?).

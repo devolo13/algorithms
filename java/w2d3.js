@@ -85,16 +85,18 @@ class BinarySearchTree {
    *    the tree is being traversed.
    * @returns {BinarySearchTree} This tree.
    */
+  // NOT WORKING / UNFINISHED
   insertRecursive(newVal, curr = this.root) {
-    // if (this.root == null){
-    //   this.root = new BSTNode(newVal);
-    //   return this;
-    // } else if (curr.value == newVal){
-    //   return this;
-    // }
-    // if (curr.data > newVal){
-
-    // }
+    if (curr == null){
+      curr = new BSTNode(newVal);
+    } else if (curr.data == newVal){
+      return curr;
+    } else if (curr.data > newVal){
+      curr = this.insertRecursive(newVal, curr.left);
+    } else if (curr.data < newVal) {
+      curr = this.insertRecursive(newVal, curr.right);
+    }
+    return curr;
   }
 
   // Day 2 ====================================================================
@@ -328,9 +330,3 @@ fullTree
   .insert(44)
   .insert(66)
   .insert(90).print();
-
-  // console.log('');
-  // console.log('----------');
-  // console.log('');
-
-  // threeLevelTree.print();
